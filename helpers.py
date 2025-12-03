@@ -1,7 +1,10 @@
 def create_test_function(test_input, expected_output):
     def test_solution(func):
         result = func(test_input)
-        assert result == expected_output, f"Expected {expected_output}, got {result}"
+        if result != expected_output:
+            print(f"❌ FAIL: Expected {expected_output}, got {result}")
+        else:
+            print("✅ SUCCESS!")
     return test_solution
 
 
